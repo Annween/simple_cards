@@ -1,34 +1,145 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# SimpleCards - React Component Library
 
-## Getting Started
+[![npm version](https://badge.fury.io/js/simple-cards.svg)](https://badge.fury.io/js/simple-cards)
 
-First, run the development server:
+SimpleCards is a versatile React component library that empowers you to effortlessly create visually appealing cards with flexible image positions. Whether you want your images on the left, right, or any other position, SimpleCards has got you covered. This library streamlines the process of designing and laying out cards, making it a perfect choice for developers looking to enhance user interfaces with stunning card-based content.
+
+## Features
+
+- Create cards with images positioned on the left, right, or anywhere in between.
+- Highly customizable content, including titles and descriptions.
+- Easy-to-use integration into your React applications.
+- Perfect for showcasing content in a visually engaging way.
+
+## Installation
+
+Install SimpleCards into your project using npm:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+npm install simple-cards
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Import SimpleCards into your React project:
 
-## Learn More
+```jsx
+import { Cards } from 'simple-cards';
 
-To learn more about Next.js, take a look at the following resources:
+const App = () => {
+  // Your data
+  return (
+    <Cards
+      amount={integer}
+      images={array}
+      content={array}
+      position={array}
+    />
+  );
+};
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export default App;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Props
 
-## Deploy on Vercel
+| Prop       | Type      | Description                                                                  |
+|------------|-----------|------------------------------------------------------------------------------| 
+| `amount`   | `number`  | The number of cards to be rendered.                                          |
+| `images`   | `array`   | Optionnal : An array of image objects (See structure below).                 |
+| `content`  | `array`   | An array of content objects (See structure below).                           |
+| `position` | `array`   | The position of the image in the card.                                       |
+| `style`    | `string`  | The style of the card background. Choose from 'dark', 'luminous', 'default'. |
+| `rounded`  | `boolean` | Whether to add rounded corners to the cards. |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Structure of `content` prop
+The content array should contain objects representing the content that you want to display within the cards. Each object should have the following properties:
+
+    title (string): The title of the card content.
+    description (string): The description or text content of the card.
+
+Here's an example of how the content array could be structured:
+
+```jsx
+[
+  {
+    title: 'Title 1',
+    description: 'Description 1',
+  },
+  {
+    title: 'Title 2',
+    description: 'Description 2',
+  },
+	// Add more content objects as needed
+]
+```
+
+## Structure of `images` prop
+The images array should contain objects representing the images that you want to display within the cards. Each object should have the following properties:
+
+    src (string): The URL or local path of the image.
+    alt (string): The alt text of the image.
+    size (string): The size of the image. Can be any valid CSS value.
+
+Here's an example of how the images array could be structured:
+    
+    ```jsx
+    [
+    {
+        src: 'image-url-1',
+        alt: 'Image 1',
+        size: '50%', // Optional
+    },
+    {
+        src: 'image-url-2',
+        alt: 'Image 2',
+        size: '150px', // Optional
+    },
+        // Add more image objects as needed
+    ]
+    ```
+Size is optional. If you don't specify a size, the image will be rendered at its original size.
+
+Note: The number of image objects in the array should match the number of cards you want to render.
+
+## Examples
+
+### Basic Usage
+
+```jsx
+<Cards
+	amount={2}
+	images={[
+		{
+			src: 'image-url-1',
+			alt: 'Image 1',
+			size: '50%', // can be any valid CSS value
+		},
+		{
+			src: 'image-url-2',
+			alt: 'Image 2',
+			size: '150px', // can be any valid CSS value
+		},
+	]}
+	content={[
+		{
+			title: 'Title 1',
+			description: 'Description 1',
+		},
+		{
+			title: 'Title 2',
+			description: 'Description 2',
+		}
+		// ...
+	]}
+	position={['left', 'right']}
+	style="dark"   // Choose from 'dark', 'luminous', 'default'
+	rounded={true} // true for rounded corners, false for square
+/>
+```
+
+
+
+

@@ -1,0 +1,114 @@
+/* Réinitialiser les styles de la liste non ordonnée pour supprimer les marges par défaut */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.cards__section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 100px 10%;
+
+}
+
+.card.default{
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: none;
+    padding: 16px;
+}
+
+.card.left {
+    display: flex;
+    align-items: center; /* Ajoutez align-items */
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: none;
+    padding: 16px;
+}
+
+.card.right{
+    display: flex;
+    align-items: center; /* Ajoutez align-items */
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: none;
+    padding: 16px;
+}
+
+.card.bottom{
+    max-width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: none;
+    padding: 16px;
+}
+
+
+
+.card.left .card__image.left {
+   /* width: 100px; /* Ajustez la largeur de l'image selon vos besoins */
+    height: auto;
+    border-radius: 8px;
+    margin-right: 16px; /* Ajoutez un espacement entre l'image et le contenu */
+}
+
+
+.card__image.right{
+    /*width: 100px; /* Ajustez la largeur de l'image selon vos besoins */
+    height: auto;
+    border-radius: 8px;
+    margin-left: 16px; /* Ajoutez un espacement entre l'image et le contenu */
+}
+
+.card__image.default {
+    /* Pour que l'image occupe toute la largeur de la carte */
+    width: 100%;
+    /* Pour que l'image s'adapte à la hauteur de la carte tout en conservant son aspect ratio */
+    height: auto;
+    /* Pour arrondir les coins de l'image, si nécessaire */
+    border-radius: 8px;
+}
+
+/* Styles de fond */
+.card.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.card.luminous {
+    background-color: #f4f4f4;
+}
+
+.card.default {
+    background-color: #f8f8f8;
+}
+
+/* Bord arrondi */
+.card.rounded {
+    border-radius: 8px;
+}
+
+
+.card-content {
+    /* Pour ajouter un espacement supérieur entre l'image et la description */
+    margin-top: 0;
+}
+
+.card-content p {
+    /* Pour enlever les marges par défaut des paragraphes */
+    margin: 0;
+    /* Pour spécifier le style du texte, si nécessaire */
+    font-size: 16px;
+    color: #a59c8d;
+    font-family: Inter, sans-serif;
+}
+
+.card.bottom .card-content p{
+    margin-bottom: 10px;
+}
