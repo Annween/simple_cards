@@ -44,14 +44,14 @@ export default App;
 
 ## Props
 
-| Prop       | Type      | Description                                                                  |
-|------------|-----------|------------------------------------------------------------------------------| 
-| `amount`   | `number`  | The number of cards to be rendered.                                          |
-| `images`   | `array`   | Optionnal : An array of image objects (See structure below).                 |
-| `content`  | `array`   | An array of content objects (See structure below).                           |
-| `position` | `array`   | The position of the image in the card.                                       |
+| Prop       | Type      | Description                                                                 |
+|------------|-----------|-----------------------------------------------------------------------------| 
+| `amount`   | `number`  | The number of cards to be rendered.                                         |
+| `images`   | `array`   | Optional : An array of image objects (See structure below).                 |
+| `content`  | `array`   | An array of content objects (See structure below).                          |
+| `position` | `array`   | Optional : The position of the image in the card.                           |
 | `style`    | `string`  | The style of the card background. Choose from 'dark', 'luminous', 'default'. |
-| `rounded`  | `boolean` | Whether to add rounded corners to the cards. |
+| `rounded`  | `boolean` | Whether to add rounded corners to the cards.                                |   
 
 
 ## Structure of `content` prop
@@ -102,7 +102,7 @@ Here's an example of how the images array could be structured:
     ```
 Size is optional. If you don't specify a size, the image will be rendered at its original size.
 
-Note: The number of image objects in the array should match the number of cards you want to render.
+Note: If you choose to add images  in your cards the number of image objects in the array should match the number of cards you want to render.
 
 ## Examples
 

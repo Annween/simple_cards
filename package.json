@@ -1,7 +1,8 @@
 {
-  "name": "simple_cards",
-  "version": "0.1.0",
-  "private": true,
+  "author": "Annween",
+  "name": "simplecards",
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
